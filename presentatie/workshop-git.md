@@ -329,4 +329,18 @@ Checking connectivity... done.
 
 * Haal laatste revisie binnen: `git pull`
 * Maak wijzigingen
-* 
+* Nogmaals `git pull`
+    * Eventuele conflicten oplossen en `commit`ten
+* Naar centrale repository: `git push`
+
+## Demo
+
+Bert en Lene werken samen aan een project. Als dat maar goed afloopt...
+
+## Nadelen "eenvoudige" workflow
+
+* Veel conflicten
+* "master"/"trunk" is moeilijk stabiel te houden
+
+# Branching en merging
+
