@@ -289,10 +289,12 @@ $ git remote add origin git@github.com:bertvv/my_project.git
 $ git remote -v
  origin git@github.com:bertvv/my_project.git (fetch)
  origin git@github.com:bertvv/my_project.git (push)
-$ git push origin master
+$ git push -u origin master
 ```
 
-De code staat nu op Github!
+* De code staat nu op Github!
+* Git push: als argumenten "doel" en "bron" opgeven
+    * Optie `-u` zorgt dat dat maar één keer moet
 
 ## Externe repository kopiëren
 

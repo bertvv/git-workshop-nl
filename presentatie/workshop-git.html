@@ -68,6 +68,11 @@
 <li>beter zicht op interne werking</li>
 <li>heel goede info-/foutboodschappen</li>
 </ul>
+</section><section id="enkele-instellingen" class="slide level2">
+<h1>Enkele instellingen</h1>
+<pre><code>git config --global user.name &quot;Lene Van Vreckem&quot;
+git config --global user.email &quot;lene.vanvreckem@gmail.com&quot;
+git config --global push.default simple</code></pre>
 </section></section>
 <section><section id="git-solo" class="titleslide slide level1"><h1>Git solo</h1></section><section id="initialiseer-repository" class="slide level2">
 <h1>Initialiseer repository</h1>
@@ -159,6 +164,11 @@ nothing to commit, working directory clean</code></pre>
 <li>Geef goede commit-boodschappen</li>
 <li><code>git status</code> voordat je iets doet</li>
 <li>Lees de foutboodschappen</li>
+<li>Vermijd <em>artefacten</em> (automatisch gegenereerde bestanden)</li>
+<li>Vermijd <em>binaire</em> bestanden die vaak gewijzigd worden
+<ul>
+<li>Geen Word-documenten! Gebruik Markdown</li>
+</ul></li>
 </ul>
 </section><section id="gitignore" class="slide level2">
 <h1><code>.gitignore</code></h1>
@@ -258,16 +268,16 @@ $ git log --pretty=&quot;format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d
 </ul>
 </section><section class="slide level2">
 
-<pre><code>[bobje@jace ~]$ ssh-keygen -t rsa -C &quot;bobje@example.com&quot;
+<pre><code>[lene@jace ~]$ ssh-keygen -t rsa -C &quot;lene@example.com&quot;
 Generating public/private rsa key pair.
-Enter file in which to save the key (/home/bobje/.ssh/id_rsa): [ENTER]
-Created directory &#39;/home/bobje/.ssh&#39;.
+Enter file in which to save the key (/home/lene/.ssh/id_rsa): [ENTER]
+Created directory &#39;/home/lene/.ssh&#39;.
 Enter passphrase (empty for no passphrase): [ENTER]
 Enter same passphrase again: [ENTER]
-Your identification has been saved in /home/bobje/.ssh/id_rsa.
-Your public key has been saved in /home/bobje/.ssh/id_rsa.pub.
+Your identification has been saved in /home/lene/.ssh/id_rsa.
+Your public key has been saved in /home/lene/.ssh/id_rsa.pub.
 The key fingerprint is:
-e7:fe:2b:ca:09:87:61:26:90:2a:d1:7f:8c:2c:8b:18 bobje@example.com
+e7:fe:2b:ca:09:87:61:26:90:2a:d1:7f:8c:2c:8b:18 lene@example.com
 The key&#39;s randomart image is:
 +--[ RSA 2048]----+
 |                 |
@@ -280,8 +290,8 @@ The key&#39;s randomart image is:
 |       + o.      |
 |        +..oo.   |
 +-----------------+
-[bobje@jace ~]$ cat .ssh/id_rsa.pub
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKGL1YqIK/67bYib2FaVnRVnlTVJHxUq+DtF3e1aDCZYAWzIYK+MTceW1Qg0fuAlYc5qvUCMmSy9eWgnG8jS8PU7DWgOjIbLtbqTLBDwGEUgMNhRc2wHwYiZqIswe9nr4/zMFW4AVd/GpOXiFjTfXZoLCh2m0+NcB5Z1OoiMv3vti1OsMZJ1ECIDZ5QGkju2bhyZpqsQ7FYUZT3CYkCwsKVVZJUoEU09A5DyhakZJedIMO5Qdlinu45qKjQwJr9t5Dw75pRcHarMHVCQJKwIv3wRzO1PImhk45rjHsBGWYPH4bfistbFbTLrWbdPZYlYrk2hI3z15O4TrGHasBPCMx bobje@example.com</code></pre>
+[lene@jace ~]$ cat .ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKGL1YqIK/67bYib2FaVnRVnlTVJHxUq+DtF3e1aDCZYAWzIYK+MTceW1Qg0fuAlYc5qvUCMmSy9eWgnG8jS8PU7DWgOjIbLtbqTLBDwGEUgMNhRc2wHwYiZqIswe9nr4/zMFW4AVd/GpOXiFjTfXZoLCh2m0+NcB5Z1OoiMv3vti1OsMZJ1ECIDZ5QGkju2bhyZpqsQ7FYUZT3CYkCwsKVVZJUoEU09A5DyhakZJedIMO5Qdlinu45qKjQwJr9t5Dw75pRcHarMHVCQJKwIv3wRzO1PImhk45rjHsBGWYPH4bfistbFbTLrWbdPZYlYrk2hI3z15O4TrGHasBPCMx lene@example.com</code></pre>
 </section><section id="repository-aanmaken" class="slide level2">
 <h1>Repository aanmaken</h1>
 <p>Maak op Github een nieuwe repository aan (bv. <code>my_project</code>)</p>
@@ -303,8 +313,14 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKGL1YqIK/67bYib2FaVnRVnlTVJHxUq+DtF3e1aDC
 $ git remote -v
  origin git@github.com:bertvv/my_project.git (fetch)
  origin git@github.com:bertvv/my_project.git (push)
-$ git push origin master</code></pre>
-<p>De code staat nu op Github!</p>
+$ git push -u origin master</code></pre>
+<ul>
+<li>De code staat nu op Github!</li>
+<li>Git push: als argumenten &quot;doel&quot; en &quot;bron&quot; opgeven
+<ul>
+<li>Optie <code>-u</code> zorgt dat dat maar één keer moet</li>
+</ul></li>
+</ul>
 </section><section id="externe-repository-kopiëren" class="slide level2">
 <h1>Externe repository kopiëren</h1>
 <p>Stel, je wil verder werken aan het project van iemand anders:</p>
@@ -335,6 +351,13 @@ Checking connectivity... done.</code></pre>
 <figure>
 <img src="img/new-repo.png" alt="Nieuw project aanmaken voor een team" /><figcaption>Nieuw project aanmaken voor een team</figcaption>
 </figure>
+</section><section id="eenvoudige-workflow" class="slide level2">
+<h1>Eenvoudige workflow</h1>
+<ul>
+<li>Haal laatste revisie binnen: <code>git pull</code></li>
+<li>Maak wijzigingen</li>
+<li></li>
+</ul>
 </section></section>
     </div>
   </div>
