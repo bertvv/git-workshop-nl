@@ -338,10 +338,17 @@ Checking connectivity... done.
 
 Bert en Lene werken samen aan een project. Als dat maar goed afloopt...
 
+* Conflicten oplossen
+* `git push`, `git pull`
+* `git fetch` en `git rebase origin/master`
+
 ## Nadelen "eenvoudige" workflow
 
 * Veel conflicten
 * "master"/"trunk" is moeilijk stabiel te houden
+* Duidelijke afspraken in het team nodig!
+    * Rol van begeleiders als coach
 
 # Branching en merging
+
 
