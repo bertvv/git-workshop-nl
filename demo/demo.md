@@ -231,4 +231,11 @@ $ h
 * fdd6528 2014-11-15 Initial commit Bert Van Vreckem, 2 hours ago
 ```
 
+### Hoe doe je het best wel?
+
+Vóór commit:
+
+* `git fetch`
+* `git rebase origin/master`
+
 
