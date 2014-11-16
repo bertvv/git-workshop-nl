@@ -356,16 +356,22 @@ Checking connectivity... done.</code></pre>
 <ul>
 <li>Haal laatste revisie binnen: <code>git pull</code></li>
 <li>Maak wijzigingen</li>
-<li>Nogmaals <code>git pull</code>
-<ul>
-<li>Eventuele conflicten oplossen en <code>commit</code>ten</li>
-</ul></li>
+<li>Haal laatste wijzigingen binnen: <code>git fetch</code></li>
+<li>Eigen wijzigingen toepassen op versie van server: <code>git rebase origin/master</code></li>
+<li>Mergen en committen</li>
 <li>Naar centrale repository: <code>git push</code></li>
 </ul>
 </section><section id="demo" class="slide level2">
 <h1>Demo</h1>
 <p>Bert en Lene werken samen aan een project. Als dat maar goed afloopt...</p>
+</section><section id="nadelen-eenvoudige-workflow" class="slide level2">
+<h1>Nadelen &quot;eenvoudige&quot; workflow</h1>
+<ul>
+<li>Veel conflicten</li>
+<li>&quot;master&quot;/&quot;trunk&quot; is moeilijk stabiel te houden</li>
+</ul>
 </section></section>
+<section><section id="branching-en-merging" class="titleslide slide level1"><h1>Branching en merging</h1></section></section>
     </div>
   </div>
 

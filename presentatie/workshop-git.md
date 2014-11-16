@@ -329,8 +329,9 @@ Checking connectivity... done.
 
 * Haal laatste revisie binnen: `git pull`
 * Maak wijzigingen
-* Nogmaals `git pull`
-    * Eventuele conflicten oplossen en `commit`ten
+* Haal laatste wijzigingen binnen: `git fetch`
+* Eigen wijzigingen toepassen op versie van server: `git rebase origin/master`
+* Mergen en committen
 * Naar centrale repository: `git push`
 
 ## Demo
