@@ -120,8 +120,8 @@ Project en workshops 2 - groep 10
 
 # Begeleiders
 
-* Irina Malfait (irina.malfait@hogent.be)
-* Stefaan Samyn (stefaan.samyn@hogent.be)
+* Irina Malfait (irina.malfait@example.com)
+* Stefaan Samyn (stefaan.samyn@example.com)
 ```
 
 ## Bert pusht als eerste, lukt
@@ -177,8 +177,8 @@ Project en workshops 2 - groep 10
 # Begeleiders
 >>>>>>> 4ff1588e771287af4f8bac0246a32d6b160a4260
 
-* Irina Malfait (irina.malfait@hogent.be)
-* Stefaan Samyn (stefaan.samyn@hogent.be)
+* Irina Malfait (irina.malfait@example.com)
+* Stefaan Samyn (stefaan.samyn@example.com)
 ```
 
 * Conflict aangeduid met `<<<<<<<<`. `========`, `>>>>>>>>`
