@@ -1,15 +1,17 @@
-% title: Scenario Git demo
-% author: Bert Van Vreckem
+---
+title: 'Scenario Git demo'
+author: Bert Van Vreckem
+...
 
 * Twee gebruikers: `bertvv` en `lenevv`
 * Hebben elk een terminal open
 
-## Git repo aanmaken
+# Git repo aanmaken
 
 * `bertvv` maakt een repo aan op Github, bv. `git@github.com:HoGentTIN/p02g10.git` incl. README
 * `bertvv` en `lenevv` doen `git clone git@github.com:HoGentTIN/p02g10.git`
 
-### Inhoud README
+## Inhoud README
 
 ```Markdown
 # p02g10
@@ -17,9 +19,9 @@
 Project en workshops 2 - groep 10
 ```
 
-## Wijzigingen doorvoeren
+# Wijzigingen doorvoeren
 
-### Eerst `bertvv`: groepsleden toevoegen
+## Eerst `bertvv`: groepsleden toevoegen
 
 Nieuwe inhoud `README.md`
 
@@ -39,7 +41,7 @@ $ git push
 * Laat verschil zien op GitHub
 * Toon opeenvolgende commits
 
-### Dan `lenevv`: websites toevoegen
+## Dan `lenevv`: websites toevoegen
 
 Nieuwe inhoud `README.md`
 
@@ -56,7 +58,7 @@ $ git commit -m "Websites toegevoegd"
 $ git push
 ```
 
-### `bertvv` vergeet te pullen
+## `bertvv` vergeet te pullen
 
 ```ShellSession
 $ vi .gitignore
@@ -75,7 +77,7 @@ Foutboodschap op dit punt: remote weigert wijzigingen te aanvaarden.
 * `git log` (`h` shortcut)
     * Revisies gaan even uit elkaar en komen terug samen
 
-## Conflicten
+# Conflicten
 
 * Zorg dat beide gebruikers up-to-date zijn (dus `git pull`)
 * Bekijk de history bij beide gebruikers: identiek!
@@ -88,14 +90,14 @@ Lene voegt toe aan `README.md`
 
 Project en workshops 2 - groep 10
 
-## Groepsleden
+# Groepsleden
 
 | Naam             | Gebruikersnaam | Website |
 | :---             | :---           | :---    |
 | Bert Van Vreckem | `bertvv`       | https://github.com/bertvv |
 | Lene Van Vreckem | `lenevv`       | https://github.com/lenevv |
 
-## Gebruikte tools
+# Gebruikte tools
 
 * Kanban-bord: https://trello.com/
 * Tijdregistratie: https://toggl.com/
@@ -109,20 +111,20 @@ Bert maakt ook wijzigingen aan `README.md`
 
 Project en workshops 2 - groep 10
 
-## Groepsleden
+# Groepsleden
 
 | Naam             | Gebruikersnaam | Website                   |
 | :---             | :---           | :---                      |
 | Bert Van Vreckem | `bertvv`       | https://github.com/bertvv |
 | Lene Van Vreckem | `lenevv`       | https://github.com/lenevv |
 
-## Begeleiders
+# Begeleiders
 
 * Irina Malfait (irina.malfait@hogent.be)
 * Stefaan Samyn (stefaan.samyn@hogent.be)
 ```
 
-### Bert pusht als eerste, lukt
+## Bert pusht als eerste, lukt
 
 ```ShellSession
 $ git add .
@@ -130,7 +132,7 @@ $ git commit -m "Begeleiders toegevoegd"
 $ git push
 ```
 
-### Lene pusht later, conflict
+## Lene pusht later, conflict
 
 ```ShellSession
 lene@jace $ git add README.md 
@@ -158,7 +160,7 @@ Inhoud van README.md:
 
 Project en workshops 2 - groep 10
 
-## Groepsleden
+# Groepsleden
 
 | Naam             | Gebruikersnaam | Website                   |
 | :---             | :---           | :---                      |
@@ -166,13 +168,13 @@ Project en workshops 2 - groep 10
 | Lene Van Vreckem | `lenevv`       | https://github.com/lenevv |
 
 <<<<<<< HEAD
-## Gebruikte tools
+# Gebruikte tools
 
 * Kanban-bord: https://trello.com/
 * Tijdregistratie: https://toggl.com/
 
 =======
-## Begeleiders
+# Begeleiders
 >>>>>>> 4ff1588e771287af4f8bac0246a32d6b160a4260
 
 * Irina Malfait (irina.malfait@hogent.be)
@@ -196,7 +198,7 @@ To git@github.com:HoGentTIN/p02g10.git
    4ff1588..73c057e  master -> master
 ```
 
-### Bert haalt wijzigingen binnen
+## Bert haalt wijzigingen binnen
 
 ```ShellSession
 $ git status
@@ -235,28 +237,28 @@ $ h
 * fdd6528 2014-11-15 Initial commit Bert Van Vreckem, 2 hours ago
 ```
 
-### Hoe doe je het best wel?
+## Hoe doe je het best wel?
 
 Vóór commit:
 
 * `git fetch`
 * `git rebase origin/master`
 
-### Bert voegt bestand toe
+## Bert voegt bestand toe
 
 Bert voegt nieuw bestand toe: `use_cases/uc_klant_selecteren.md:`
 
 ```Markdown
 # Use Case Klant selecteren
 
-## Situering
+# Situering
 
 * **Niveau**: subfunctie
 * **Primaire actor**: hotelmedewerker verantwoordelijk voor reservaties
 * **Precondities**: BINFSea Booking is gestart
 * **Postcondities**: Er is een klant geselecteerd
 
-## Normaal verloop
+# Normaal verloop
 
 1. De hotelmedewerker voert ofwel een klantnummer ofwel (een deel van) een naam (van een
 persoon of bedrijf) in.
@@ -267,7 +269,7 @@ een lijst van de gevonden klanten het klantnummer en de naam.
 zitten.
 5. De hotelmedewerker bevestigt de selectie.
 
-## Alternatief verloop
+# Alternatief verloop
 
 * **3a**: Het moet mogelijk zijn terug te keren naar stap 1 om een nieuwe zoekopdracht op te geven
 * **5a**: Het moet mogelijk zijn terug te keren naar stap 3 om een nieuwe klant te selecteren.
@@ -283,12 +285,12 @@ History op dit moment (1e twee lijnen):
 *   73c057e 2014-11-16 Conflict opgelost: tools en begeleiders Lene Van Vreckem, 9 hours ago
 ```
 
-### Bert voegt sectie "andere vereisten" toe
+## Bert voegt sectie "andere vereisten" toe
 
 Inhoud toegevoegd aan `use_cases/uc_klant_selecteren`:
 
 ```Markdown
-## Andere vereisten
+# Andere vereisten
 Klantgegevens bij te houden in het systeem:
 
 * Klant ID
@@ -313,13 +315,13 @@ History op dit moment:
 *   73c057e 2014-11-16 Conflict opgelost: tools en begeleiders Lene Van Vreckem, 9 hours ago
 ```
 
-### Lene voegt sectie "open issues" toe
+## Lene voegt sectie "open issues" toe
 
 
 Inhoud toegevoegd aan `use_cases/uc_klant_selecteren`:
 
 ```Markdown
-## Open issues
+# Open issues
 
 * Als de klant niet gevonden is in de lijst, zou er een nieuwe klant aangemaakt moeten
 worden.
@@ -329,7 +331,7 @@ dan zou het moeten mogelijk zijn de klantgegevens aan te passen.
 
 Daarna `commit`, maar `push` wordt (uiteraard) geweigerd.
 
-### Versies samenvoegen
+## Versies samenvoegen
 
 Lene:
 
