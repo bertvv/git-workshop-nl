@@ -38,14 +38,14 @@
 <section>
     <h1 class="title">Git tutorial</h1>
     <h2 class="author">Bert Van Vreckem</h2>
-    <h3 class="date">HoGent Vakgroep Informatica, 2014-12-XX</h3>
+    <h3 class="date">HoGent Vakgroep Informatica, 2014-12-18</h3>
 </section>
 
 <section><section id="preliminaries" class="titleslide slide level1"><h1>Preliminaries</h1></section><section id="over-multi-tasken" class="slide level2">
 <h1>Over multi-tasken</h1>
 <ul>
 <li>Technische workshop, pittig tempo</li>
-<li>Workshop volgen en tegelijk ander werk doen zal niet lukken...</li>
+<li>Je zal veel missen als je tegelijk ander werk doet...</li>
 </ul>
 </section><section id="software" class="slide level2">
 <h1>Software</h1>
@@ -59,6 +59,28 @@
 <li>bv. SourceTree of GitHub for Mac/Windows</li>
 </ul></li>
 </ul>
+</section><section id="informatiebronnen" class="slide level2">
+<h1>Informatiebronnen</h1>
+<ul>
+<li>Chacon &amp; Straub, 2014. <a href="http://git-scm.com/book/en/v2">Pro Git</a>. Apress</li>
+<li><a href="http://git-scm.com/docs">Reference</a> (&quot;man pages&quot;)</li>
+<li><a href="https://onlywei.github.io/explain-git-with-d3/">Visualizing Git Concepts with D3</a></li>
+<li><a href="http://ndpsoftware.com/git-cheatsheet.html">Visual Git Cheat Sheet</a></li>
+</ul>
+</section><section id="over-git" class="slide level2">
+<h1>Over Git</h1>
+<ul>
+<li><em>Gedistribueerd</em> versiebeheersysteem</li>
+<li>Geschreven door Linux Torvalds, voor Linux Kernelproject (2005)</li>
+<li>Schaalbaar (Linux kernel: &gt;15M LOC, &gt;12K commits, &gt;1300 developers)</li>
+<li>Snapshots, geen diffs</li>
+<li>Data-integriteit is gewaarborgd (revisie-id = checksum)</li>
+</ul>
+</section><section class="slide level2">
+
+<figure>
+<img src="img/demotivational-git.jpg" alt="Git is niet eenvoudig" /><figcaption>Git is niet eenvoudig</figcaption>
+</figure>
 </section><section id="cli-vs.-gui" class="slide level2">
 <h1>CLI vs. GUI</h1>
 <p>Er bestaan GUI's, waarom CLI?</p>
@@ -68,8 +90,8 @@
 <li>beter zicht op interne werking</li>
 <li>heel goede info-/foutboodschappen</li>
 </ul>
-</section><section id="enkele-instellingen" class="slide level2">
-<h1>Enkele instellingen</h1>
+</section><section id="enkele-algemene-instellingen" class="slide level2">
+<h1>Enkele algemene instellingen</h1>
 <pre><code>git config --global user.name &quot;Lene Van Vreckem&quot;
 git config --global user.email &quot;lene.vanvreckem@gmail.com&quot;
 git config --global push.default simple</code></pre>
@@ -89,18 +111,18 @@ nothing to commit (create/copy files and use &quot;git add&quot; to track)</code
 </section><section id="werkomgeving" class="slide level2">
 <h1>Werkomgeving</h1>
 <ul>
-<li>Working copy
+<li class="fragment">Working copy
 <ul>
-<li>de directorystructuur en bestanden waarin je wijzigingen aanbrengt</li>
+<li class="fragment">de directorystructuur en bestanden waarin je wijzigingen aanbrengt</li>
 </ul></li>
-<li>Staging
+<li class="fragment">Staging
 <ul>
-<li>&quot;Tussenstation&quot; tussen <em>working copy</em> en <em>repository</em></li>
-<li>Laat toe wijzigingen selectief te <em>committen</em></li>
+<li class="fragment">&quot;Tussenstation&quot; tussen <em>working copy</em> en <em>repository</em></li>
+<li class="fragment">Laat toe wijzigingen selectief te <em>committen</em></li>
 </ul></li>
-<li>Repository
+<li class="fragment">Repository
 <ul>
-<li>Verzameling van alle commits, branches, tags, ...</li>
+<li class="fragment">Verzameling van alle commits, branches, tags, ...</li>
 </ul></li>
 </ul>
 </section><section id="workflow" class="slide level2">
@@ -160,14 +182,14 @@ nothing to commit, working directory clean</code></pre>
 <section><section id="tips-en-truuks" class="titleslide slide level1"><h1>Tips en truuks</h1></section><section id="aanbevelingen" class="slide level2">
 <h1>Aanbevelingen</h1>
 <ul>
-<li>Zo vaak mogelijk committen (<em>atomair</em>)</li>
-<li>Geef goede commit-boodschappen</li>
-<li><code>git status</code> voordat je iets doet</li>
-<li>Lees de foutboodschappen</li>
-<li>Vermijd <em>artefacten</em> (automatisch gegenereerde bestanden)</li>
-<li>Vermijd <em>binaire</em> bestanden die vaak gewijzigd worden
+<li class="fragment">Zo vaak mogelijk committen (<em>atomair</em>)</li>
+<li class="fragment">Geef goede commit-boodschappen</li>
+<li class="fragment"><code>git status</code> voordat je iets doet</li>
+<li class="fragment">Lees de foutboodschappen</li>
+<li class="fragment">Vermijd <em>artefacten</em> (automatisch gegenereerde bestanden)</li>
+<li class="fragment">Vermijd <em>binaire</em> bestanden die vaak gewijzigd worden
 <ul>
-<li>Geen Word-documenten! Gebruik Markdown</li>
+<li class="fragment">Geen Word-documenten! Gebruik <a href="http://daringfireball.net/projects/markdown/">Markdown</a></li>
 </ul></li>
 </ul>
 </section><section id="gitignore" class="slide level2">
@@ -225,7 +247,8 @@ $ git log --pretty=&quot;format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d
 <ul>
 <li>Belangrijkste hosting-provider voor Git repositories</li>
 <li>Gratis voor open source</li>
-<li>Ondersteunen Subversion clients (bv. Visual Paradigm diagrammen)</li>
+<li>Ondersteunen Subversion clients (bv. Visual Paradigm diagrammen?)</li>
+<li>Je kan als leerkracht een gratis afgesloten omgeving (&quot;organisation&quot;) aanvragen</li>
 </ul>
 </section><section id="bitbucket" class="slide level2">
 <h1>Bitbucket</h1>
@@ -233,6 +256,7 @@ $ git log --pretty=&quot;format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d
 <ul>
 <li>Goed alternatief voor Github</li>
 <li>Ongelimiteerd private repositories tot 5 teamleden = gratis</li>
+<li>Product van Atlassian</li>
 </ul>
 </section><section id="github-account" class="slide level2">
 <h1>Github account</h1>
@@ -355,7 +379,7 @@ Checking connectivity... done.</code></pre>
 <h1>Eenvoudige workflow</h1>
 <ul>
 <li>Haal laatste revisie binnen: <code>git pull</code></li>
-<li>Maak wijzigingen</li>
+<li>Maak wijzigingen: <code>git add</code>, <code>git commit</code></li>
 <li>Haal laatste wijzigingen binnen: <code>git fetch</code></li>
 <li>Eigen wijzigingen toepassen op versie van server: <code>git rebase origin/master</code></li>
 <li>Mergen en committen</li>
@@ -364,11 +388,20 @@ Checking connectivity... done.</code></pre>
 </section><section id="demo" class="slide level2">
 <h1>Demo</h1>
 <p>Bert en Lene werken samen aan een project. Als dat maar goed afloopt...</p>
+<ul>
+<li>Conflicten oplossen</li>
+<li><code>git push</code>, <code>git pull</code></li>
+<li><code>git fetch</code> en <code>git rebase origin/master</code></li>
+</ul>
 </section><section id="nadelen-eenvoudige-workflow" class="slide level2">
 <h1>Nadelen &quot;eenvoudige&quot; workflow</h1>
 <ul>
 <li>Veel conflicten</li>
 <li>&quot;master&quot;/&quot;trunk&quot; is moeilijk stabiel te houden</li>
+<li>Duidelijke afspraken in het team nodig!
+<ul>
+<li>Rol van begeleiders als coach</li>
+</ul></li>
 </ul>
 </section></section>
 <section><section id="branching-en-merging" class="titleslide slide level1"><h1>Branching en merging</h1></section></section>

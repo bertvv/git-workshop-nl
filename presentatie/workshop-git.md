@@ -1,13 +1,13 @@
 % Git tutorial
 % Bert Van Vreckem
-% HoGent Vakgroep Informatica, 2014-12-XX
+% HoGent Vakgroep Informatica, 2014-12-18
 
 # Preliminaries
 
 ## Over multi-tasken
 
 * Technische workshop, pittig tempo
-* Workshop volgen en tegelijk ander werk doen zal niet lukken...
+* Je zal veel missen als je tegelijk ander werk doet...
 
 ## Software
 
@@ -15,6 +15,25 @@
     * Incl. "Git Bash"
 * Evt. GUI: [http://git-scm.com/downloads/guis](http://git-scm.com/downloads/guis)
     * bv. SourceTree of GitHub for Mac/Windows
+
+## Informatiebronnen
+
+* Chacon & Straub, 2014. [Pro Git](http://git-scm.com/book/en/v2). Apress
+* [Reference](http://git-scm.com/docs) ("man pages")
+* [Visualizing Git Concepts with D3](https://onlywei.github.io/explain-git-with-d3/)
+* [Visual Git Cheat Sheet](http://ndpsoftware.com/git-cheatsheet.html)
+
+## Over Git
+
+* *Gedistribueerd* versiebeheersysteem
+* Geschreven door Linux Torvalds, voor Linux Kernelproject (2005)
+* Schaalbaar (Linux kernel: >15M LOC, >12K commits, >1300 developers)
+* Snapshots, geen diffs
+* Data-integriteit is gewaarborgd (revisie-id = checksum)
+
+--------
+
+![Git is niet eenvoudig](img/demotivational-git.jpg)
 
 ## CLI vs. GUI
 
@@ -25,7 +44,7 @@ Er bestaan GUI's, waarom CLI?
 * beter zicht op interne werking
 * heel goede info-/foutboodschappen
 
-## Enkele instellingen
+## Enkele algemene instellingen
 
 ```
 git config --global user.name "Lene Van Vreckem"
@@ -52,12 +71,12 @@ nothing to commit (create/copy files and use "git add" to track)
 
 ## Werkomgeving
 
-* Working copy
+> * Working copy
     * de directorystructuur en bestanden waarin je wijzigingen aanbrengt
-* Staging
+> * Staging
     * "Tussenstation" tussen *working copy* en *repository*
     * Laat toe wijzigingen selectief te *committen*
-* Repository
+> * Repository
     * Verzameling van alle commits, branches, tags, ...
 
 ## Workflow
@@ -134,13 +153,13 @@ nothing to commit, working directory clean
 
 ## Aanbevelingen
 
-* Zo vaak mogelijk committen (*atomair*)
-* Geef goede commit-boodschappen
-* `git status` voordat je iets doet
-* Lees de foutboodschappen
-* Vermijd *artefacten* (automatisch gegenereerde bestanden)
-* Vermijd *binaire* bestanden die vaak gewijzigd worden
-    * Geen Word-documenten! Gebruik Markdown
+> * Zo vaak mogelijk committen (*atomair*)
+> * Geef goede commit-boodschappen
+> * `git status` voordat je iets doet
+> * Lees de foutboodschappen
+> * Vermijd *artefacten* (automatisch gegenereerde bestanden)
+> * Vermijd *binaire* bestanden die vaak gewijzigd worden
+    * Geen Word-documenten! Gebruik [Markdown](http://daringfireball.net/projects/markdown/)
 
 ## `.gitignore`
 
@@ -206,7 +225,8 @@ $ git log --pretty="format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d
 
 * Belangrijkste hosting-provider voor Git repositories
 * Gratis voor open source
-* Ondersteunen Subversion clients (bv. Visual Paradigm diagrammen)
+* Ondersteunen Subversion clients (bv. Visual Paradigm diagrammen?)
+* Je kan als leerkracht een gratis afgesloten omgeving ("organisation") aanvragen
 
 ## Bitbucket
 
@@ -214,6 +234,7 @@ $ git log --pretty="format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d
 
 * Goed alternatief voor Github
 * Ongelimiteerd private repositories tot 5 teamleden = gratis
+* Product van Atlassian
 
 ## Github account
 
@@ -328,7 +349,7 @@ Checking connectivity... done.
 ## Eenvoudige workflow
 
 * Haal laatste revisie binnen: `git pull`
-* Maak wijzigingen
+* Maak wijzigingen: `git add`, `git commit`
 * Haal laatste wijzigingen binnen: `git fetch`
 * Eigen wijzigingen toepassen op versie van server: `git rebase origin/master`
 * Mergen en committen
