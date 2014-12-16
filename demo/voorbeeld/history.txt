@@ -1,0 +1,17 @@
+$ h
+* * c21260f 2014-11-16 UC Klant selecteren: open issues toegevoegd (HEAD, origin/master, origin/HEAD, master) Lene Van Vreckem, 4 weeks ago
+* * f7a8d07 2014-11-16 UC Klant selecteren: Andere vereisten toegevoegd Bert Van Vreckem, 4 weeks ago
+* * a4c2011 2014-11-16 UC Klant Selecteren toegevoegd Bert Van Vreckem, 4 weeks ago
+* *   73c057e 2014-11-16 Conflict opgelost: tools en begeleiders Lene Van Vreckem, 4 weeks ago
+* |\  
+* | * 4ff1588 2014-11-16 Begeleiders toegevoegd Bert Van Vreckem, 4 weeks ago
+* * | 7684c26 2014-11-16 Tools toegevoegd Lene Van Vreckem, 4 weeks ago
+* |/  
+* *   d9ab141 2014-11-15 upstream wijzigingen toepassen Bert Van Vreckem, 4 weeks ago
+* |\  
+* | * be7ed03 2014-11-15 Websites toegevoegd Lene Van Vreckem, 4 weeks ago
+* * | 914c94c 2014-11-15 Negeer backups Bert Van Vreckem, 4 weeks ago
+* |/  
+* * 5d8b7a6 2014-11-15 Groepsleden toegevoegd aan README Bert Van Vreckem, 4 weeks ago
+* * fdd6528 2014-11-15 Initial commit Bert Van Vreckem, 4 weeks ago
+*
