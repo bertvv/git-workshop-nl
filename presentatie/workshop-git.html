@@ -41,7 +41,7 @@
     <h3 class="date">HoGent Vakgroep Informatica, 2014-12-18</h3>
 </section>
 
-<section><section id="preliminaries" class="titleslide slide level1"><h1>Preliminaries</h1></section><section id="over-multi-tasken" class="slide level2">
+<section><section id="voor-we-beginnen" class="titleslide slide level1"><h1>Voor we beginnen</h1></section><section id="over-multi-tasken" class="slide level2">
 <h1>Over multi-tasken</h1>
 <ul>
 <li>Technische workshop, pittig tempo</li>
@@ -66,15 +66,20 @@
 <li><a href="http://git-scm.com/docs">Reference</a> (&quot;man pages&quot;)</li>
 <li><a href="https://onlywei.github.io/explain-git-with-d3/">Visualizing Git Concepts with D3</a></li>
 <li><a href="http://ndpsoftware.com/git-cheatsheet.html">Visual Git Cheat Sheet</a></li>
+<li><a href="http://git-scm.com/docs/giteveryday"><code>giteveryday</code></a></li>
 </ul>
 </section><section id="over-git" class="slide level2">
 <h1>Over Git</h1>
 <ul>
-<li><em>Gedistribueerd</em> versiebeheersysteem</li>
-<li>Geschreven door Linux Torvalds, voor Linux Kernelproject (2005)</li>
-<li>Schaalbaar (Linux kernel: &gt;15M LOC, &gt;12K commits, &gt;1300 developers)</li>
-<li>Snapshots, geen diffs</li>
-<li>Data-integriteit is gewaarborgd (revisie-id = checksum)</li>
+<li class="fragment"><em>Gedistribueerd</em> versiebeheersysteem
+<ul>
+<li class="fragment">commits zijn lokaal</li>
+<li class="fragment">synchroniseren tussen &quot;repositories&quot;</li>
+</ul></li>
+<li class="fragment">Geschreven door Linux Torvalds, voor Linux Kernelproject (2005)</li>
+<li class="fragment">Schaalbaar (Linux kernel: &gt;15M LOC, &gt;12K commits, &gt;1300 developers)</li>
+<li class="fragment">Snapshots, geen diffs</li>
+<li class="fragment">Data-integriteit is gewaarborgd (revisie-id = checksum)</li>
 </ul>
 </section><section class="slide level2">
 
@@ -96,6 +101,7 @@
 git config --global user.email &quot;lene.vanvreckem@gmail.com&quot;
 git config --global push.default simple</code></pre>
 </section></section>
+<section><section id="deel-1-git-leren-kennen" class="titleslide slide level1"><h1>Deel 1: Git leren kennen</h1></section></section>
 <section><section id="git-solo" class="titleslide slide level1"><h1>Git solo</h1></section><section id="initialiseer-repository" class="slide level2">
 <h1>Initialiseer repository</h1>
 <pre class="bash"><code>$ mkdir my_project
@@ -192,6 +198,24 @@ nothing to commit, working directory clean</code></pre>
 <li class="fragment">Geen Word-documenten! Gebruik <a href="http://daringfireball.net/projects/markdown/">Markdown</a></li>
 </ul></li>
 </ul>
+</section><section id="markdown" class="slide level2">
+<h1>Markdown</h1>
+<p><a href="https://daringfireball.net/projects/markdown/">daringfireball.net/projects/markdown/</a></p>
+<ul>
+<li>&quot;Opgemaakte&quot; tekst, radicaal eenvoudig</li>
+<li>Github &quot;rendert&quot; dit als HTML
+<ul>
+<li>vet, cursief, links, afbeeldingen, syntaxkleuren, ...</li>
+<li>Herkent verwijzingen naar issues</li>
+</ul></li>
+<li>Kan omgezet worden in andere formaten met bv. <a href="http://johnmacfarlane.net/pandoc/">Pandoc</a>
+<ul>
+<li>vb. Deze presentatie (reveal.js)</li>
+<li>→ LaTeX → PDF</li>
+<li>OpenDocument, Office Open XML</li>
+</ul></li>
+<li>Beter dan Office-documenten in Git opslaan...</li>
+</ul>
 </section><section id="gitignore" class="slide level2">
 <h1><code>.gitignore</code></h1>
 <ul>
@@ -235,6 +259,13 @@ $ git log --pretty=&quot;format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d
     --date=short --graph
 * 97deea3 2014-11-15 Added .gitignore (HEAD, master) Bert Van Vreckem, 22 minutes ago
 * aadfd67 2014-11-15 README toegevoegd Bert Van Vreckem, 2 hours ago</code></pre>
+</section><section id="tags" class="slide level2">
+<h1>Tags</h1>
+<p>&quot;Bladwijzers&quot; in commit history</p>
+<ul>
+<li><code>git tag v1.0.0</code></li>
+<li><code>git tag -m &quot;Release versie 1.0.0&quot; v1.0.0</code></li>
+</ul>
 </section></section>
 <section><section id="werken-met-remotes" class="titleslide slide level1"><h1>Werken met remotes</h1></section><section id="workflow-1" class="slide level2">
 <h1>Workflow</h1>
@@ -258,6 +289,7 @@ $ git log --pretty=&quot;format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d
 <li>Ongelimiteerd private repositories tot 5 teamleden = gratis</li>
 <li>Product van Atlassian</li>
 </ul>
+<p>NB. Ik heb academische licenties voor JIRA (+ Agile), Bamboo, Bitbucket, Clover (code coverage)</p>
 </section><section id="github-account" class="slide level2">
 <h1>Github account</h1>
 <ul>
@@ -272,23 +304,23 @@ $ git log --pretty=&quot;format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d
 <h1>SSH-sleutels aanmaken</h1>
 <p>Zie <a href="https://help.github.com/articles/generating-ssh-keys/">https://help.github.com/articles/generating-ssh-keys/</a></p>
 <ul>
-<li><em>SSH-sleutel</em> is een beveiligde authenticatiemethode zonder wachtwoord</li>
-<li>nieuwe sleutel aanmaken (evt. zonder &quot;pass phrase&quot;)
+<li class="fragment"><em>SSH-sleutel</em> vervangt wachtwoord</li>
+<li class="fragment">nieuwe sleutel aanmaken (evt. zonder &quot;pass phrase&quot;)
 <ul>
-<li>In (Git) Bash: <code>ssh-keygen -t rsa -C &quot;bert.vanvreckem@hogent.be&quot;</code></li>
+<li class="fragment">In (Git) Bash: <code>ssh-keygen -t rsa -C &quot;bert.vanvreckem@hogent.be&quot;</code></li>
 </ul></li>
-<li>Publieke sleutel openen en kopiëren
+<li class="fragment">Publieke sleutel openen en kopiëren
 <ul>
-<li>In (Git) Bash: <code>cat ~/.ssh/id_rsa.pub</code></li>
+<li class="fragment">In (Git) Bash: <code>cat ~/.ssh/id_rsa.pub</code></li>
 </ul></li>
-<li>In Github, klik rechtsboven op het tandwiel
+<li class="fragment">In Github, klik rechtsboven op het tandwiel
 <ul>
-<li>Selecteer in het menu links <strong>SSH keys</strong></li>
-<li>Klik <strong>Add SSH key</strong></li>
-<li>Publieke sleutel plakken in het <em>Key</em>-veld</li>
-<li>Klik <strong>Add key</strong></li>
+<li class="fragment">Selecteer in het menu links <strong>SSH keys</strong></li>
+<li class="fragment">Klik <strong>Add SSH key</strong></li>
+<li class="fragment">Publieke sleutel plakken in het <em>Key</em>-veld</li>
+<li class="fragment">Klik <strong>Add key</strong></li>
 </ul></li>
-<li>Testen: <code>ssh -T git@github.com</code></li>
+<li class="fragment">Testen: <code>ssh -T git@github.com</code></li>
 </ul>
 </section><section class="slide level2">
 
@@ -381,6 +413,7 @@ Checking connectivity... done.</code></pre>
 <li>Haal laatste revisie binnen: <code>git pull</code></li>
 <li>Maak wijzigingen: <code>git add</code>, <code>git commit</code></li>
 <li>Haal laatste wijzigingen binnen: <code>git fetch</code></li>
+<li>Bekijk wijzigingen van anderen: <code>git log -p HEAD..FETCH_HEAD</code></li>
 <li>Eigen wijzigingen toepassen op versie van server: <code>git rebase origin/master</code></li>
 <li>Mergen en committen</li>
 <li>Naar centrale repository: <code>git push</code></li>
@@ -403,8 +436,135 @@ Checking connectivity... done.</code></pre>
 <li>Rol van begeleiders als coach</li>
 </ul></li>
 </ul>
+</section><section id="branching-en-merging" class="slide level2">
+<h1>Branching en merging</h1>
+<p>Branches zijn goedkoop en eenvoudig, gebruik is sterk aanbevolen</p>
+<ul>
+<li>Nieuwe feature</li>
+<li>Bugfix</li>
+<li>Experimenten</li>
+</ul>
+</section><section id="commandos" class="slide level2">
+<h1>Commando's</h1>
+<ul>
+<li><code>git branch NAAM</code> -- nieuwe branch aanmaken</li>
+<li><code>git checkout NAAM</code> -- naar deze branch overgaan
+<ul>
+<li>commits gaan naar nieuwe branch</li>
+</ul></li>
+<li><code>git checkout --branch NAAM</code> -- 2 vorige commando's in 1 keer
+<ul>
+<li><code>-b</code> kan ook</li>
+</ul></li>
+</ul>
+</section><section id="mergen-en-opruimen" class="slide level2">
+<h1>Mergen en opruimen</h1>
+<ul>
+<li><code>git checkout master</code> -- terug naar de hoofdbranch</li>
+<li><code>git merge NAAM</code> -- wijzigingen uit branch toepassen</li>
+<li><code>git branch -d NAAM</code> -- branch verwijderen
+<ul>
+<li><code>-D</code> is verwijderen zonder controle op merge</li>
+</ul></li>
+</ul>
+<p>Voorbeeld: <a href="https://onlywei.github.io/explain-git-with-d3/">https://onlywei.github.io/explain-git-with-d3/</a></p>
+</section><section id="branch-strategieën" class="slide level2">
+<h1>Branch-strategieën</h1>
+<ol type="1">
+<li><em>Niet</em> branchen: iedereen werkt op <code>master</code></li>
+<li>Topic branches: voor elke taak een aparte branch:</li>
+<li>Versie-branches</li>
+</ol>
+</section><section id="niet-branchen-procon" class="slide level2">
+<h1>Niet branchen: pro/con</h1>
+<ul>
+<li>Eenvoudigste workflow</li>
+<li>Moeilijk om <code>master</code> stabiel (compilerend) te houden</li>
+</ul>
+</section><section id="topic-branches" class="slide level2">
+<h1>Topic branches</h1>
+<ul>
+<li class="fragment">Geen rechtstreekse commits op <code>master</code>, altijd branchen</li>
+<li class="fragment">Branch-namen geven idee van doel, verwijzen evt. naar issue tracker
+<ul>
+<li class="fragment"><code>feature/gh-12-uc-make-reservation</code> (nieuwe feature)</li>
+<li class="fragment"><code>fix/gh-14-nullpointer</code> (bugfix)</li>
+<li class="fragment"><code>wip/optimise</code> (experimenten)</li>
+</ul></li>
+<li class="fragment">Afgewerkt =&gt; mergen met <code>master</code></li>
+<li class="fragment">Na mergen met <code>master</code> topic branch verwijderen!</li>
+<li class="fragment">Niet alle branches naar <code>origin</code> pushen (bv. <code>wip</code>)</li>
+</ul>
+</section><section id="topic-branches-procon" class="slide level2">
+<h1>Topic branches: pro/con</h1>
+<p>Geschikt voor voortdurend evoluerende software, geen aparte versies te onderhouden (vb. SaaS)</p>
+<ul>
+<li>Makkelijker om <code>master</code> stabiel te houden</li>
+<li>Duidelijker zicht op toestant project (?)
+<ul>
+<li>vb. topic branch per Use Case</li>
+</ul></li>
+<li>Complexere workflow
+<ul>
+<li>goede afspraken en werkverdeling nodig tussen teamleden!</li>
+</ul></li>
+</ul>
+</section><section id="versie-branches" class="slide level2">
+<h1>Versie-branches</h1>
+<ul>
+<li>Feature branches afsplitsen van/mergen met <code>master</code></li>
+<li>Bij release een nieuwe release branch afsplitsen</li>
+<li>Hotfix-branches afsplitsen van release branch
+<ul>
+<li>Mergen met release branch</li>
+<li>Daarna met <code>master</code></li>
+</ul></li>
+</ul>
+<p>Geschikt voor software met &quot;releases&quot; die je moet blijven onderhouden</p>
+</section><section id="welke-branching-strategie-gebruiken" class="slide level2">
+<h1>Welke branching-strategie gebruiken?</h1>
+<ul>
+<li>Hangt af van de situatie</li>
+<li>Bepaal zelf meest geschikte werkwijze
+<ul>
+<li>voor studenten</li>
+<li>voor opvolging</li>
+</ul></li>
+</ul>
+<p>Experimenteer!</p>
 </section></section>
-<section><section id="branching-en-merging" class="titleslide slide level1"><h1>Branching en merging</h1></section></section>
+<section><section id="deel-2-git-gebruiken-in-de-opleiding" class="titleslide slide level1"><h1>Deel 2: Git gebruiken in de opleiding</h1></section><section id="wie-gebruikt-nu-al-git" class="slide level2">
+<h1>Wie gebruikt nu al Git</h1>
+<p>en wil ervaringen delen?</p>
+</section><section id="github-tips-en-truuks" class="slide level2">
+<h1>Github tips en truuks</h1>
+<ul>
+<li class="fragment">Subversion-interface</li>
+<li class="fragment">Opvolging projectwerking
+<ul>
+<li class="fragment">Commits</li>
+<li class="fragment">Pulse, graphs, Contributors</li>
+</ul></li>
+<li class="fragment">Releases</li>
+<li class="fragment">Issue tracker
+<ul>
+<li class="fragment">Werkverdeling</li>
+<li class="fragment">Commit-boodschappen met verwijzingen</li>
+<li class="fragment">Mijlpalen, labels</li>
+</ul></li>
+<li class="fragment"><a href="https://help.github.com/articles/github-flavored-markdown/">Github flavored Markdown</a></li>
+</ul>
+</section><section id="experimenteer" class="slide level2">
+<h1>Experimenteer!</h1>
+<ul>
+<li>Workflows voor projecten
+<ul>
+<li>concrete afspraken volgend semester</li>
+</ul></li>
+<li>Visual Paradigm-modellen beheren?</li>
+<li>...</li>
+</ul>
+</section></section>
     </div>
   </div>
 

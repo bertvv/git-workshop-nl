@@ -2,7 +2,7 @@
 % Bert Van Vreckem
 % HoGent Vakgroep Informatica, 2014-12-18
 
-# Preliminaries
+# Voor we beginnen
 
 ## Over multi-tasken
 
@@ -22,14 +22,18 @@
 * [Reference](http://git-scm.com/docs) ("man pages")
 * [Visualizing Git Concepts with D3](https://onlywei.github.io/explain-git-with-d3/)
 * [Visual Git Cheat Sheet](http://ndpsoftware.com/git-cheatsheet.html)
+* [`giteveryday`](http://git-scm.com/docs/giteveryday)
+
 
 ## Over Git
 
-* *Gedistribueerd* versiebeheersysteem
-* Geschreven door Linux Torvalds, voor Linux Kernelproject (2005)
-* Schaalbaar (Linux kernel: >15M LOC, >12K commits, >1300 developers)
-* Snapshots, geen diffs
-* Data-integriteit is gewaarborgd (revisie-id = checksum)
+> * *Gedistribueerd* versiebeheersysteem
+    * commits zijn lokaal
+    * synchroniseren tussen "repositories"
+> * Geschreven door Linux Torvalds, voor Linux Kernelproject (2005)
+> * Schaalbaar (Linux kernel: >15M LOC, >12K commits, >1300 developers)
+> * Snapshots, geen diffs
+> * Data-integriteit is gewaarborgd (revisie-id = checksum)
 
 --------
 
@@ -51,6 +55,8 @@ git config --global user.name "Lene Van Vreckem"
 git config --global user.email "lene.vanvreckem@gmail.com"
 git config --global push.default simple
 ```
+
+# Deel 1: Git leren kennen
 
 # Git solo
 
@@ -161,6 +167,21 @@ nothing to commit, working directory clean
 > * Vermijd *binaire* bestanden die vaak gewijzigd worden
     * Geen Word-documenten! Gebruik [Markdown](http://daringfireball.net/projects/markdown/)
 
+## Markdown
+
+[daringfireball.net/projects/markdown/](https://daringfireball.net/projects/markdown/)
+
+* "Opgemaakte" tekst, radicaal eenvoudig
+* Github "rendert" dit als HTML
+    * vet, cursief, links, afbeeldingen, syntaxkleuren, ...
+    * Herkent verwijzingen naar issues
+* Kan omgezet worden in andere formaten met bv. [Pandoc](http://johnmacfarlane.net/pandoc/)
+    * vb. Deze presentatie (reveal.js)
+    * → LaTeX → PDF
+    * OpenDocument, Office Open XML
+* Beter dan Office-documenten in Git opslaan...
+
+
 ## `.gitignore`
 
 * Negeer bepaalde bestanden in de repository, aan de hand van een patroon
@@ -213,6 +234,13 @@ $ git log --pretty="format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d
 * aadfd67 2014-11-15 README toegevoegd Bert Van Vreckem, 2 hours ago
 ```
 
+## Tags
+
+"Bladwijzers" in commit history
+
+* `git tag v1.0.0`
+* `git tag -m "Release versie 1.0.0" v1.0.0`
+
 # Werken met remotes
 
 ## Workflow
@@ -236,6 +264,8 @@ $ git log --pretty="format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d
 * Ongelimiteerd private repositories tot 5 teamleden = gratis
 * Product van Atlassian
 
+NB. Ik heb academische licenties voor JIRA (+ Agile), Bamboo, Bitbucket, Clover (code coverage)
+
 ## Github account
 
 * Maak een account aan (gebruik hogent.be-emailadres)
@@ -247,17 +277,17 @@ $ git log --pretty="format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d
 
 Zie [https://help.github.com/articles/generating-ssh-keys/](https://help.github.com/articles/generating-ssh-keys/)
 
-* *SSH-sleutel* is een beveiligde authenticatiemethode zonder wachtwoord
-* nieuwe sleutel aanmaken (evt. zonder "pass phrase")
+> * *SSH-sleutel* vervangt wachtwoord
+> * nieuwe sleutel aanmaken (evt. zonder "pass phrase")
     * In (Git) Bash: ``ssh-keygen -t rsa -C "bert.vanvreckem@hogent.be"``
-* Publieke sleutel openen en kopiëren
+> * Publieke sleutel openen en kopiëren
     * In (Git) Bash: `cat ~/.ssh/id_rsa.pub`
-* In Github, klik rechtsboven op het tandwiel
+> * In Github, klik rechtsboven op het tandwiel
     * Selecteer in het menu links **SSH keys**
     * Klik **Add SSH key**
     * Publieke sleutel plakken in het *Key*-veld
     * Klik **Add key**
-* Testen: `ssh -T git@github.com`
+> * Testen: `ssh -T git@github.com`
 
 ---
 
@@ -351,6 +381,7 @@ Checking connectivity... done.
 * Haal laatste revisie binnen: `git pull`
 * Maak wijzigingen: `git add`, `git commit`
 * Haal laatste wijzigingen binnen: `git fetch`
+* Bekijk wijzigingen van anderen: `git log -p HEAD..FETCH_HEAD`
 * Eigen wijzigingen toepassen op versie van server: `git rebase origin/master`
 * Mergen en committen
 * Naar centrale repository: `git push`
@@ -370,6 +401,104 @@ Bert en Lene werken samen aan een project. Als dat maar goed afloopt...
 * Duidelijke afspraken in het team nodig!
     * Rol van begeleiders als coach
 
-# Branching en merging
+## Branching en merging
 
+Branches zijn goedkoop en eenvoudig, gebruik is sterk aanbevolen
 
+* Nieuwe feature
+* Bugfix
+* Experimenten
+
+## Commando's
+
+* `git branch NAAM` -- nieuwe branch aanmaken
+* `git checkout NAAM` -- naar deze branch overgaan
+    * commits gaan naar nieuwe branch
+* `git checkout --branch NAAM` -- 2 vorige commando's in 1 keer
+    * `-b` kan ook
+
+## Mergen en opruimen
+
+* `git checkout master` -- terug naar de hoofdbranch
+* `git merge NAAM` -- wijzigingen uit branch toepassen
+* `git branch -d NAAM` -- branch verwijderen
+    * `-D` is verwijderen zonder controle op merge
+
+Voorbeeld: [https://onlywei.github.io/explain-git-with-d3/](https://onlywei.github.io/explain-git-with-d3/)
+
+## Branch-strategieën
+
+1. *Niet* branchen: iedereen werkt op `master`
+2. Topic branches: voor elke taak een aparte branch:
+3. Versie-branches
+
+## Niet branchen: pro/con
+
+* Eenvoudigste workflow
+* Moeilijk om `master` stabiel (compilerend) te houden
+
+## Topic branches
+
+> * Geen rechtstreekse commits op `master`, altijd branchen
+> * Branch-namen geven idee van doel, verwijzen evt. naar issue tracker
+    * `feature/gh-12-uc-make-reservation` (nieuwe feature)
+    * `fix/gh-14-nullpointer` (bugfix)
+    * `wip/optimise` (experimenten)
+> * Afgewerkt => mergen met `master`
+> * Na mergen met `master` topic branch verwijderen!
+> * Niet alle branches naar `origin` pushen (bv. `wip`)
+
+## Topic branches: pro/con
+
+Geschikt voor voortdurend evoluerende software, geen aparte versies te onderhouden (vb. SaaS)
+
+* Makkelijker om `master` stabiel te houden
+* Duidelijker zicht op toestant project (?)
+    * vb. topic branch per Use Case
+* Complexere workflow
+    * goede afspraken en werkverdeling nodig tussen teamleden!
+
+## Versie-branches
+
+* Feature branches afsplitsen van/mergen met `master`
+* Bij release een nieuwe release branch afsplitsen
+* Hotfix-branches afsplitsen van release branch
+    * Mergen met release branch
+    * Daarna met `master`
+
+Geschikt voor software met "releases" die je moet blijven onderhouden
+
+## Welke branching-strategie gebruiken?
+
+* Hangt af van de situatie
+* Bepaal zelf meest geschikte werkwijze
+    * voor studenten
+    * voor opvolging
+
+Experimenteer!
+
+# Deel 2: Git gebruiken in de opleiding
+
+## Wie gebruikt nu al Git
+
+en wil ervaringen delen?
+
+## Github tips en truuks
+
+> * Subversion-interface
+> * Opvolging projectwerking
+    * Commits
+    * Pulse, graphs, Contributors
+> * Releases
+> * Issue tracker
+    * Werkverdeling
+    * Commit-boodschappen met verwijzingen
+    * Mijlpalen, labels
+> * [Github flavored Markdown](https://help.github.com/articles/github-flavored-markdown/)
+
+## Experimenteer!
+
+* Workflows voor projecten
+    * concrete afspraken volgend semester
+* Visual Paradigm-modellen beheren?
+* ...
