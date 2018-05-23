@@ -1,43 +1,19 @@
-% Git tutorial
-% Bert Van Vreckem
-% HoGent Vakgroep Informatica, 2014-12-18
+# Workshop Git, niet enkel voor programmeurs
 
-# Voor we beginnen
+## Bert Van Vreckem
 
-## Over multi-tasken
+## 2018-05-25
 
-* Technische workshop, pittig tempo
-* Je zal veel missen als je tegelijk ander werk doet...
+---
 
 ## Software
 
 * Git client: [http://git-scm.com/download/](http://git-scm.com/download/)
     * Incl. "Git Bash"
 * Evt. GUI: [http://git-scm.com/downloads/guis](http://git-scm.com/downloads/guis)
-    * bv. SourceTree of GitHub for Mac/Windows
+    * bv. GitHub Desktop for Mac/Windows
 
-## Informatiebronnen
-
-* Chacon & Straub, 2014. [Pro Git](http://git-scm.com/book/en/v2). Apress
-* [Reference](http://git-scm.com/docs) ("man pages")
-* [Visualizing Git Concepts with D3](https://onlywei.github.io/explain-git-with-d3/)
-* [Visual Git Cheat Sheet](http://ndpsoftware.com/git-cheatsheet.html)
-* [`giteveryday`](http://git-scm.com/docs/giteveryday)
-
-
-## Over Git
-
-> * *Gedistribueerd* versiebeheersysteem
-    * commits zijn lokaal
-    * synchroniseren tussen "repositories"
-> * Geschreven door Linux Torvalds, voor Linux Kernelproject (2005)
-> * Schaalbaar (Linux kernel: >15M LOC, >12K commits, >1300 developers)
-> * Snapshots, geen diffs
-> * Data-integriteit is gewaarborgd (revisie-id = checksum)
-
---------
-
-![Git is niet eenvoudig](img/demotivational-git.jpg)
+---
 
 ## CLI vs. GUI
 
@@ -48,6 +24,34 @@ Er bestaan GUI's, waarom CLI?
 * beter zicht op interne werking
 * heel goede info-/foutboodschappen
 
+---
+
+## Informatiebronnen
+
+* Chacon & Straub, 2014. [Pro Git](http://git-scm.com/book/en/v2). Apress
+* [Reference](http://git-scm.com/docs) ("man pages")
+* [Visualizing Git Concepts with D3](https://onlywei.github.io/explain-git-with-d3/)
+* [Visual Git Cheat Sheet](http://ndpsoftware.com/git-cheatsheet.html)
+* [`giteveryday`](http://git-scm.com/docs/giteveryday)
+
+---
+
+## Over Git
+
+* *Gedistribueerd* versiebeheersysteem
+    * commits zijn lokaal
+    * synchroniseren tussen "repositories"
+* Geschreven door Linus Torvalds, voor Linux Kernelproject (2005)
+* Schaalbaar (Linux kernel: >15M LOC, >12K commits, >1300 developers)
+* Snapshots, geen diffs
+* Data-integriteit is gewaarborgd (revisie-id = checksum)
+
+---
+
+![Git is niet eenvoudig](img/demotivational-git.jpg)
+
+---
+
 ## Enkele algemene instellingen
 
 ```
@@ -56,9 +60,15 @@ git config --global user.email "lene.vanvreckem@gmail.com"
 git config --global push.default simple
 ```
 
++++
+
 # Deel 1: Git leren kennen
 
+---
+
 # Git solo
+
+---
 
 ## Initialiseer repository
 
@@ -75,15 +85,19 @@ Initial commit
 nothing to commit (create/copy files and use "git add" to track)
 ```
 
+---
+
 ## Werkomgeving
 
-> * Working copy
+* Working copy
     * de directorystructuur en bestanden waarin je wijzigingen aanbrengt
-> * Staging
+* Staging
     * "Tussenstation" tussen *working copy* en *repository*
     * Laat toe wijzigingen selectief te *committen*
-> * Repository
+* Repository
     * Verzameling van alle commits, branches, tags, ...
+
+---
 
 ## Workflow
 
@@ -138,6 +152,9 @@ $ git status
 On branch master
 nothing to commit, working directory clean
 ```
+
+---
+
 ## Ctrl-Z!
 
 * Je kan (zo goed als) elke stap ongedaan maken!
@@ -155,17 +172,23 @@ nothing to commit, working directory clean
 
 * `git status` herinnert telkens aan deze commando's!
 
+---
+
 # Tips en truuks
+
+---
 
 ## Aanbevelingen
 
-> * Zo vaak mogelijk committen (*atomair*)
-> * Geef goede commit-boodschappen
-> * `git status` voordat je iets doet
-> * Lees de foutboodschappen
-> * Vermijd *artefacten* (automatisch gegenereerde bestanden)
-> * Vermijd *binaire* bestanden die vaak gewijzigd worden
+* Zo vaak mogelijk committen (*atomair*)
+* Geef goede commit-boodschappen
+* `git status` voordat je iets doet
+* Lees de foutboodschappen
+* Vermijd *artefacten* (automatisch gegenereerde bestanden)
+* Vermijd *binaire* bestanden die vaak gewijzigd worden
     * Geen Word-documenten! Gebruik [Markdown](http://daringfireball.net/projects/markdown/)
+
+---
 
 ## Markdown
 
@@ -181,6 +204,7 @@ nothing to commit, working directory clean
     * OpenDocument, Office Open XML
 * Beter dan Office-documenten in Git opslaan...
 
+---
 
 ## `.gitignore`
 
@@ -192,6 +216,8 @@ nothing to commit, working directory clean
 *.bak
 build/  # directory with compiled files
 ```
+
+---
 
 ## Wijzigingen bekijken
 
@@ -210,6 +236,8 @@ Dit is mijn eerste Git repository!
 +
 +Deze lijn is gewijzigd
 ```
+
+---
 
 ## Historiek
 
@@ -234,6 +262,8 @@ $ git log --pretty="format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d
 * aadfd67 2014-11-15 README toegevoegd Bert Van Vreckem, 2 hours ago
 ```
 
+---
+
 ## Tags
 
 "Bladwijzers" in commit history
@@ -241,11 +271,17 @@ $ git log --pretty="format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d
 * `git tag v1.0.0`
 * `git tag -m "Release versie 1.0.0" v1.0.0`
 
+---
+
 # Werken met remotes
+
+---
 
 ## Workflow
 
 ![Synchroniseren met een externe repository](img/workflow-remote.png)
+
+---
 
 ## Github
 
@@ -256,6 +292,8 @@ $ git log --pretty="format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d
 * Ondersteunen Subversion clients (bv. Visual Paradigm diagrammen?)
 * Je kan als leerkracht een gratis afgesloten omgeving ("organisation") aanvragen
 
+---
+
 ## Bitbucket
 
 [https://bitbucket.org/](https://bitbucket.org/)
@@ -264,7 +302,7 @@ $ git log --pretty="format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d
 * Ongelimiteerd private repositories tot 5 teamleden = gratis
 * Product van Atlassian
 
-NB. Ik heb academische licenties voor JIRA (+ Agile), Bamboo, Bitbucket, Clover (code coverage)
+---
 
 ## Github account
 
@@ -273,21 +311,23 @@ NB. Ik heb academische licenties voor JIRA (+ Agile), Bamboo, Bitbucket, Clover 
     * [https://education.github.com/pack](https://education.github.com/pack)
     * o.a. gratis 5 private repositories, $100 hosting-pakket op DigitalOcean
 
+---
+
 ## SSH-sleutels aanmaken
 
 Zie [https://help.github.com/articles/generating-ssh-keys/](https://help.github.com/articles/generating-ssh-keys/)
 
-> * *SSH-sleutel* vervangt wachtwoord
-> * nieuwe sleutel aanmaken (evt. zonder "pass phrase")
+* *SSH-sleutel* vervangt wachtwoord
+* nieuwe sleutel aanmaken (evt. zonder "pass phrase")
     * In (Git) Bash: ``ssh-keygen -t rsa -C "bert.vanvreckem@hogent.be"``
-> * Publieke sleutel openen en kopiëren
+* Publieke sleutel openen en kopiëren
     * In (Git) Bash: `cat ~/.ssh/id_rsa.pub`
-> * In Github, klik rechtsboven op het tandwiel
+* In Github, klik rechtsboven op het tandwiel
     * Selecteer in het menu links **SSH keys**
     * Klik **Add SSH key**
     * Publieke sleutel plakken in het *Key*-veld
     * Klik **Add key**
-> * Testen: `ssh -T git@github.com`
+* Testen: `ssh -T git@github.com`
 
 ---
 
@@ -318,6 +358,7 @@ The key's randomart image is:
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKGL1YqIK/67bYib2FaVnRVnlTVJHxUq+DtF3e1aDCZYAWzIYK+MTceW1Qg0fuAlYc5qvUCMmSy9eWgnG8jS8PU7DWgOjIbLtbqTLBDwGEUgMNhRc2wHwYiZqIswe9nr4/zMFW4AVd/GpOXiFjTfXZoLCh2m0+NcB5Z1OoiMv3vti1OsMZJ1ECIDZ5QGkju2bhyZpqsQ7FYUZT3CYkCwsKVVZJUoEU09A5DyhakZJedIMO5Qdlinu45qKjQwJr9t5Dw75pRcHarMHVCQJKwIv3wRzO1PImhk45rjHsBGWYPH4bfistbFbTLrWbdPZYlYrk2hI3z15O4TrGHasBPCMx lene@example.com
 ```
 
+---
 
 ## Repository aanmaken
 
@@ -327,11 +368,15 @@ Maak op Github een nieuwe repository aan (bv. `my_project`)
 * Repo url (https) wordt: `https://github.com/USER/PROJECT.git`
 * Repo url (**ssh**) wordt: `git@github.com:USER/PROJECT.git`
 
+---
+
 ## Anderen toegang geven tot je repository
 
 * Klik rechts op **Settings**
 * In het menu links, klik op **Collaborators**
 * Voeg de gebruikersnamen toe van wie toegang moet krijgen
+
+---
 
 ## Lokale repository synchroniseren
 
@@ -347,6 +392,8 @@ $ git push -u origin master
 * Git push: als argumenten "doel" en "bron" opgeven
     * Optie `-u` zorgt dat dat maar één keer moet
 
+---
+
 ## Externe repository kopiëren
 
 Stel, je wil verder werken aan het project van iemand anders:
@@ -361,7 +408,11 @@ remote: Total 9 (delta 0), reused 9 (delta 0)
 Checking connectivity... done.
 ```
 
+---
+
 # Werken in team
+
+---
 
 ## Een project opzetten in GitHub
 
@@ -376,6 +427,8 @@ Checking connectivity... done.
 
 ![Nieuw project aanmaken voor een team](img/new-repo.png)
 
+---
+
 ## Eenvoudige workflow
 
 * Haal laatste revisie binnen: `git pull`
@@ -386,6 +439,8 @@ Checking connectivity... done.
 * Mergen en committen
 * Naar centrale repository: `git push`
 
+---
+
 ## Demo
 
 Bert en Lene werken samen aan een project. Als dat maar goed afloopt...
@@ -394,12 +449,16 @@ Bert en Lene werken samen aan een project. Als dat maar goed afloopt...
 * `git push`, `git pull`
 * `git fetch` en `git rebase origin/master`
 
+---
+
 ## Nadelen "eenvoudige" workflow
 
 * Veel conflicten
 * "master"/"trunk" is moeilijk stabiel te houden
 * Duidelijke afspraken in het team nodig!
     * Rol van begeleiders als coach
+
+---
 
 ## Branching en merging
 
@@ -409,6 +468,8 @@ Branches zijn goedkoop en eenvoudig, gebruik is sterk aanbevolen
 * Bugfix
 * Experimenten
 
+---
+
 ## Commando's
 
 * `git branch NAAM` -- nieuwe branch aanmaken
@@ -416,6 +477,8 @@ Branches zijn goedkoop en eenvoudig, gebruik is sterk aanbevolen
     * commits gaan naar nieuwe branch
 * `git checkout --branch NAAM` -- 2 vorige commando's in 1 keer
     * `-b` kan ook
+
+---
 
 ## Mergen en opruimen
 
@@ -426,27 +489,35 @@ Branches zijn goedkoop en eenvoudig, gebruik is sterk aanbevolen
 
 Voorbeeld: [https://onlywei.github.io/explain-git-with-d3/](https://onlywei.github.io/explain-git-with-d3/)
 
+---
+
 ## Branch-strategieën
 
 1. *Niet* branchen: iedereen werkt op `master`
 2. Topic branches: voor elke taak een aparte branch:
 3. Versie-branches
 
+---
+
 ## Niet branchen: pro/con
 
 * Eenvoudigste workflow
 * Moeilijk om `master` stabiel (compilerend) te houden
 
+---
+
 ## Topic branches
 
-> * Geen rechtstreekse commits op `master`, altijd branchen
-> * Branch-namen geven idee van doel, verwijzen evt. naar issue tracker
+* Geen rechtstreekse commits op `master`, altijd branchen
+* Branch-namen geven idee van doel, verwijzen evt. naar issue tracker
     * `feature/gh-12-uc-make-reservation` (nieuwe feature)
     * `fix/gh-14-nullpointer` (bugfix)
     * `wip/optimise` (experimenten)
-> * Afgewerkt => mergen met `master`
-> * Na mergen met `master` topic branch verwijderen!
-> * Niet alle branches naar `origin` pushen (bv. `wip`)
+* Afgewerkt => mergen met `master`
+* Na mergen met `master` topic branch verwijderen!
+* Niet alle branches naar `origin` pushen (bv. `wip`)
+
+---
 
 ## Topic branches: pro/con
 
@@ -458,6 +529,8 @@ Geschikt voor voortdurend evoluerende software, geen aparte versies te onderhoud
 * Complexere workflow
     * goede afspraken en werkverdeling nodig tussen teamleden!
 
+---
+
 ## Versie-branches
 
 * Feature branches afsplitsen van/mergen met `master`
@@ -468,6 +541,8 @@ Geschikt voor voortdurend evoluerende software, geen aparte versies te onderhoud
 
 Geschikt voor software met "releases" die je moet blijven onderhouden
 
+---
+
 ## Welke branching-strategie gebruiken?
 
 * Hangt af van de situatie
@@ -477,28 +552,27 @@ Geschikt voor software met "releases" die je moet blijven onderhouden
 
 Experimenteer!
 
-# Deel 2: Git gebruiken in de opleiding
++++
+
+# Deel 2: Github in de klas
+
+---
 
 ## Wie gebruikt nu al Git
 
 en wil ervaringen delen?
 
+---
+
 ## Github tips en truuks
 
-> * Subversion-interface
-> * Opvolging projectwerking
+* Opvolging projectwerking
     * Commits
     * Pulse, graphs, Contributors
-> * Releases
-> * Issue tracker
+* Releases
+* Issue tracker
     * Werkverdeling
     * Commit-boodschappen met verwijzingen
     * Mijlpalen, labels
-> * [Github flavored Markdown](https://help.github.com/articles/github-flavored-markdown/)
+* [Github flavored Markdown](https://help.github.com/articles/github-flavored-markdown/)
 
-## Experimenteer!
-
-* Workflows voor projecten
-    * concrete afspraken volgend semester
-* Visual Paradigm-modellen beheren?
-* ...
