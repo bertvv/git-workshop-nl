@@ -8,7 +8,7 @@ Alle lesmateriaal voor een Git workshop
 
 ## Inleiding
 
-Git (ontwikkeld door Linus Torvalds, de auteur van Linux) is een versiebeheersysteem dat teams toelaat samen te werken aan gemeenschappelijke code, en alle veranderingen in de tijd bij te houden. In de eerste plaats wordt het toegepast in software-ontwikkeling, maar het is bruikbaar voor elk type van tekstgebaseerde documenten: websites, Wikis, tekstdocumenten, presentaties, enz. Git biedt ook al een enorme meerwaarde voor individueel werk. Bert heeft op dit moment bv. bijna 80 Git repositories op zijn laptop staan. Op dit moment is Git ongetwijfeld het meest populaire versiebeheersysteem in de industrie, en het is een onmisbare tool voor elke ict'er, zowel onze studenten als wij zelf...
+Git (ontwikkeld door Linus Torvalds, de auteur van Linux) is een versiebeheersysteem dat teams toelaat samen te werken aan gemeenschappelijke code, en alle veranderingen in de tijd bij te houden. In de eerste plaats wordt het toegepast in software-ontwikkeling, maar het is bruikbaar voor elk type van tekstgebaseerde documenten: websites, Wikis, tekstdocumenten, presentaties, enz. Git biedt ook al een enorme meerwaarde voor individueel werk. Op dit moment is Git ongetwijfeld het meest populaire versiebeheersysteem in de industrie, en het is een onmisbare tool voor elke ict'er...
 
 ### Deel 1: Workshop (ca. 2 à 2,5u)
 
