@@ -1,8 +1,22 @@
-# Workshop Git, niet enkel voor programmeurs
+# Git, niet enkel voor programmeurs
 
-## Bert Van Vreckem
+### Bert Van Vreckem
 
-## 2018-05-25
+### 2018-05-25
+
+---
+
+## `whoami`
+
+- Bert Van Vreckem
+- *Lector ICT* Hogeschool Gent
+    - Professionele bachelor toegepaste informatica
+    - Linux, onderzoekstechnieken, stage en bachelorproef, ...
+- *Open source* contributor: <https://github.com/bertvv/>
+
++++
+
+# Aan de slag!
 
 ---
 
@@ -10,16 +24,16 @@
 
 * Git client: [http://git-scm.com/download/](http://git-scm.com/download/)
     * Incl. "Git Bash"
-* Evt. GUI: [http://git-scm.com/downloads/guis](http://git-scm.com/downloads/guis)
-    * bv. GitHub Desktop for Mac/Windows
+* Evt. grafische tool: [http://git-scm.com/downloads/guis](http://git-scm.com/downloads/guis)
+    * bv. [GitHub Desktop](https://desktop.github.com/)
 
 ---
 
-## CLI vs. GUI
+## Grafisch vs. tekst
 
-Er bestaan GUI's, waarom CLI?
+Er bestaan grafische tools, waarom command-line?
 
-* éénduidig en compact
+* instructies zijn éénduidig en compact
 * makkelijker reproduceerbaar
 * beter zicht op interne werking
 * heel goede info-/foutboodschappen
@@ -28,7 +42,6 @@ Er bestaan GUI's, waarom CLI?
 
 ## Informatiebronnen
 
-* Chacon & Straub, 2014. [Pro Git](http://git-scm.com/book/en/v2). Apress
 * [Reference](http://git-scm.com/docs) ("man pages")
 * [Visualizing Git Concepts with D3](https://onlywei.github.io/explain-git-with-d3/)
 * [Visual Git Cheat Sheet](http://ndpsoftware.com/git-cheatsheet.html)
@@ -38,17 +51,28 @@ Er bestaan GUI's, waarom CLI?
 
 ## Over Git
 
-* *Gedistribueerd* versiebeheersysteem
-    * commits zijn lokaal
-    * synchroniseren tussen "repositories"
+Git is een *Gedistribueerd* versiebeheersysteem
+
+* Opvolgen van wijzigingen doorheen de tijd
+* Opvolgen wie wat doet
+* Elk teamlid kan onafhankelijk werken
+* Tekst, geen binaire bestanden
+
+---
+
+## Over Git
+
 * Geschreven door Linus Torvalds, voor Linux Kernelproject (2005)
-* Schaalbaar (Linux kernel: >15M LOC, >12K commits, >1300 developers)
+* Schaalbaar, bv. Linux kernel:
+    * >15M lijnen code,
+    * >12K commits,
+    * >1300 developers
 * Snapshots, geen diffs
 * Data-integriteit is gewaarborgd (revisie-id = checksum)
 
 ---
 
-![Git is niet eenvoudig](img/demotivational-git.jpg)
+---?image=img/demotivational-git.jpg&size=auto 70%
 
 ---
 
@@ -89,12 +113,12 @@ nothing to commit (create/copy files and use "git add" to track)
 
 ## Werkomgeving
 
-* Working copy
+* @color[#006FB8](Working copy)
     * de directorystructuur en bestanden waarin je wijzigingen aanbrengt
-* Staging
+* @color[#006FB8](Staging)
     * "Tussenstation" tussen *working copy* en *repository*
     * Laat toe wijzigingen selectief te *committen*
-* Repository
+* @color[#006FB8](Repository)
     * Verzameling van alle commits, branches, tags, ...
 
 ---
