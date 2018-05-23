@@ -4,7 +4,7 @@
 
 ### 2018-05-25
 
----
++++
 
 ## `whoami`
 
@@ -14,11 +14,11 @@
     - Linux, onderzoekstechnieken, stage en bachelorproef, ...
 - *Open source* contributor: <https://github.com/bertvv/>
 
-+++
+---
 
 # Aan de slag!
 
----
++++
 
 ## Software
 
@@ -27,7 +27,7 @@
 * Evt. grafische tool: [http://git-scm.com/downloads/guis](http://git-scm.com/downloads/guis)
     * bv. [GitHub Desktop](https://desktop.github.com/)
 
----
++++
 
 ## Grafisch vs. tekst
 
@@ -38,16 +38,16 @@ Er bestaan grafische tools, waarom command-line?
 * beter zicht op interne werking
 * heel goede info-/foutboodschappen
 
----
++++
 
 ## Informatiebronnen
 
-* [Reference](http://git-scm.com/docs) ("man pages")
-* [Visualizing Git Concepts with D3](https://onlywei.github.io/explain-git-with-d3/)
 * [Visual Git Cheat Sheet](http://ndpsoftware.com/git-cheatsheet.html)
-* [`giteveryday`](http://git-scm.com/docs/giteveryday)
+* [`giteveryday`](http://git-scm.com/docs/giteveryday) (basiscommando's)
+* [Visualizing Git Concepts with D3](https://onlywei.github.io/explain-git-with-d3/)
+* [Reference](http://git-scm.com/docs) ("man pages")
 
----
++++
 
 ## Over Git
 
@@ -58,23 +58,29 @@ Git is een *Gedistribueerd* versiebeheersysteem
 * Elk teamlid kan onafhankelijk werken
 * Tekst, geen binaire bestanden
 
----
++++
 
 ## Over Git
 
 * Geschreven door Linus Torvalds, voor Linux Kernelproject (2005)
 * Schaalbaar, bv. Linux kernel:
-    * >15M lijnen code,
-    * >12K commits,
-    * >1300 developers
+    * 15M+ lijnen code,
+    * 12K+ commits,
+    * 1300+ developers
 * Snapshots, geen diffs
 * Data-integriteit is gewaarborgd (revisie-id = checksum)
 
----
-
----?image=img/demotivational-git.jpg&size=auto 70%
+---?image=assets/demotivational-git.jpg&size=auto 70%
 
 ---
+
+# Deel 1: Git leren kennen
+
++++
+
+# Git solo
+
++++
 
 ## Enkele algemene instellingen
 
@@ -85,14 +91,6 @@ git config --global push.default simple
 ```
 
 +++
-
-# Deel 1: Git leren kennen
-
----
-
-# Git solo
-
----
 
 ## Initialiseer repository
 
@@ -109,7 +107,7 @@ Initial commit
 nothing to commit (create/copy files and use "git add" to track)
 ```
 
----
++++
 
 ## Werkomgeving
 
@@ -121,13 +119,13 @@ nothing to commit (create/copy files and use "git add" to track)
 * @color[#006FB8](Repository)
     * Verzameling van alle commits, branches, tags, ...
 
----
++++
 
 ## Workflow
 
-![Eenvoudige workflow voor één persoon](img/workflow-solo.png)
+![Eenvoudige workflow voor één persoon](assets/workflow-solo.png)
 
----
++++
 
 Bestand(en) aanmaken of wijzigen:
 
@@ -146,7 +144,7 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
----
++++
 
 Bestand naar staging verplaatsen: `git add`
 
@@ -163,7 +161,7 @@ Changes to be committed:
   new file:   README.md
 ```
 
----
++++
 
 Wijzigingen doorvoeren (*Inchecken*, *committen*): `git commit`
 
@@ -177,7 +175,7 @@ On branch master
 nothing to commit, working directory clean
 ```
 
----
++++
 
 ## Ctrl-Z!
 
@@ -200,7 +198,7 @@ nothing to commit, working directory clean
 
 # Tips en truuks
 
----
++++
 
 ## Aanbevelingen
 
@@ -212,7 +210,7 @@ nothing to commit, working directory clean
 * Vermijd *binaire* bestanden die vaak gewijzigd worden
     * Geen Word-documenten! Gebruik [Markdown](http://daringfireball.net/projects/markdown/)
 
----
++++
 
 ## Markdown
 
@@ -228,7 +226,7 @@ nothing to commit, working directory clean
     * OpenDocument, Office Open XML
 * Beter dan Office-documenten in Git opslaan...
 
----
++++
 
 ## `.gitignore`
 
@@ -241,7 +239,7 @@ nothing to commit, working directory clean
 build/  # directory with compiled files
 ```
 
----
++++
 
 ## Wijzigingen bekijken
 
@@ -261,7 +259,7 @@ Dit is mijn eerste Git repository!
 +Deze lijn is gewijzigd
 ```
 
----
++++
 
 ## Historiek
 
@@ -286,7 +284,7 @@ $ git log --pretty="format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d
 * aadfd67 2014-11-15 README toegevoegd Bert Van Vreckem, 2 hours ago
 ```
 
----
++++
 
 ## Tags
 
@@ -299,13 +297,13 @@ $ git log --pretty="format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d
 
 # Werken met remotes
 
----
++++
 
 ## Workflow
 
-![Synchroniseren met een externe repository](img/workflow-remote.png)
+![Synchroniseren met een externe repository](assets/workflow-remote.png)
 
----
++++
 
 ## Github
 
@@ -316,7 +314,7 @@ $ git log --pretty="format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d
 * Ondersteunen Subversion clients (bv. Visual Paradigm diagrammen?)
 * Je kan als leerkracht een gratis afgesloten omgeving ("organisation") aanvragen
 
----
++++
 
 ## Bitbucket
 
@@ -326,7 +324,7 @@ $ git log --pretty="format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d
 * Ongelimiteerd private repositories tot 5 teamleden = gratis
 * Product van Atlassian
 
----
++++
 
 ## Github account
 
@@ -335,7 +333,7 @@ $ git log --pretty="format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d
     * [https://education.github.com/pack](https://education.github.com/pack)
     * o.a. gratis 5 private repositories, $100 hosting-pakket op DigitalOcean
 
----
++++
 
 ## SSH-sleutels aanmaken
 
@@ -353,7 +351,7 @@ Zie [https://help.github.com/articles/generating-ssh-keys/](https://help.github.
     * Klik **Add key**
 * Testen: `ssh -T git@github.com`
 
----
++++
 
 ```
 [lene@jace ~]$ ssh-keygen -t rsa -C "lene@example.com"
@@ -382,7 +380,7 @@ The key's randomart image is:
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKGL1YqIK/67bYib2FaVnRVnlTVJHxUq+DtF3e1aDCZYAWzIYK+MTceW1Qg0fuAlYc5qvUCMmSy9eWgnG8jS8PU7DWgOjIbLtbqTLBDwGEUgMNhRc2wHwYiZqIswe9nr4/zMFW4AVd/GpOXiFjTfXZoLCh2m0+NcB5Z1OoiMv3vti1OsMZJ1ECIDZ5QGkju2bhyZpqsQ7FYUZT3CYkCwsKVVZJUoEU09A5DyhakZJedIMO5Qdlinu45qKjQwJr9t5Dw75pRcHarMHVCQJKwIv3wRzO1PImhk45rjHsBGWYPH4bfistbFbTLrWbdPZYlYrk2hI3z15O4TrGHasBPCMx lene@example.com
 ```
 
----
++++
 
 ## Repository aanmaken
 
@@ -392,7 +390,7 @@ Maak op Github een nieuwe repository aan (bv. `my_project`)
 * Repo url (https) wordt: `https://github.com/USER/PROJECT.git`
 * Repo url (**ssh**) wordt: `git@github.com:USER/PROJECT.git`
 
----
++++
 
 ## Anderen toegang geven tot je repository
 
@@ -400,7 +398,7 @@ Maak op Github een nieuwe repository aan (bv. `my_project`)
 * In het menu links, klik op **Collaborators**
 * Voeg de gebruikersnamen toe van wie toegang moet krijgen
 
----
++++
 
 ## Lokale repository synchroniseren
 
@@ -416,7 +414,7 @@ $ git push -u origin master
 * Git push: als argumenten "doel" en "bron" opgeven
     * Optie `-u` zorgt dat dat maar één keer moet
 
----
++++
 
 ## Externe repository kopiëren
 
@@ -436,7 +434,7 @@ Checking connectivity... done.
 
 # Werken in team
 
----
++++
 
 ## Een project opzetten in GitHub
 
@@ -447,11 +445,11 @@ Checking connectivity... done.
 * Iedereen doet
     * `git clone git@github.com:USER/PROJECT.git`
 
----
++++
 
-![Nieuw project aanmaken voor een team](img/new-repo.png)
+![Nieuw project aanmaken voor een team](assets/new-repo.png)
 
----
++++
 
 ## Eenvoudige workflow
 
@@ -463,7 +461,7 @@ Checking connectivity... done.
 * Mergen en committen
 * Naar centrale repository: `git push`
 
----
++++
 
 ## Demo
 
@@ -473,7 +471,7 @@ Bert en Lene werken samen aan een project. Als dat maar goed afloopt...
 * `git push`, `git pull`
 * `git fetch` en `git rebase origin/master`
 
----
++++
 
 ## Nadelen "eenvoudige" workflow
 
@@ -482,7 +480,7 @@ Bert en Lene werken samen aan een project. Als dat maar goed afloopt...
 * Duidelijke afspraken in het team nodig!
     * Rol van begeleiders als coach
 
----
++++
 
 ## Branching en merging
 
@@ -492,7 +490,7 @@ Branches zijn goedkoop en eenvoudig, gebruik is sterk aanbevolen
 * Bugfix
 * Experimenten
 
----
++++
 
 ## Commando's
 
@@ -502,7 +500,7 @@ Branches zijn goedkoop en eenvoudig, gebruik is sterk aanbevolen
 * `git checkout --branch NAAM` -- 2 vorige commando's in 1 keer
     * `-b` kan ook
 
----
++++
 
 ## Mergen en opruimen
 
@@ -513,7 +511,7 @@ Branches zijn goedkoop en eenvoudig, gebruik is sterk aanbevolen
 
 Voorbeeld: [https://onlywei.github.io/explain-git-with-d3/](https://onlywei.github.io/explain-git-with-d3/)
 
----
++++
 
 ## Branch-strategieën
 
@@ -521,14 +519,14 @@ Voorbeeld: [https://onlywei.github.io/explain-git-with-d3/](https://onlywei.gith
 2. Topic branches: voor elke taak een aparte branch:
 3. Versie-branches
 
----
++++
 
 ## Niet branchen: pro/con
 
 * Eenvoudigste workflow
 * Moeilijk om `master` stabiel (compilerend) te houden
 
----
++++
 
 ## Topic branches
 
@@ -541,7 +539,7 @@ Voorbeeld: [https://onlywei.github.io/explain-git-with-d3/](https://onlywei.gith
 * Na mergen met `master` topic branch verwijderen!
 * Niet alle branches naar `origin` pushen (bv. `wip`)
 
----
++++
 
 ## Topic branches: pro/con
 
@@ -553,7 +551,7 @@ Geschikt voor voortdurend evoluerende software, geen aparte versies te onderhoud
 * Complexere workflow
     * goede afspraken en werkverdeling nodig tussen teamleden!
 
----
++++
 
 ## Versie-branches
 
@@ -565,7 +563,7 @@ Geschikt voor voortdurend evoluerende software, geen aparte versies te onderhoud
 
 Geschikt voor software met "releases" die je moet blijven onderhouden
 
----
++++
 
 ## Welke branching-strategie gebruiken?
 
@@ -576,17 +574,17 @@ Geschikt voor software met "releases" die je moet blijven onderhouden
 
 Experimenteer!
 
-+++
+---
 
 # Deel 2: Github in de klas
 
----
++++
 
 ## Wie gebruikt nu al Git
 
 en wil ervaringen delen?
 
----
++++
 
 ## Github tips en truuks
 
@@ -600,3 +598,12 @@ en wil ervaringen delen?
     * Mijlpalen, labels
 * [Github flavored Markdown](https://help.github.com/articles/github-flavored-markdown/)
 
+---
+
+# Bedankt!
+
+@fa[twitter] [@bertvanvreckem](https://twitter.com/bertvanvreckem)
+
+@fa[github] <https://github.com/bertvv>
+
+@fa[linkedin] <https://www.linkedin.com/in/bertvanvreckem/>
