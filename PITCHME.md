@@ -720,3 +720,5 @@ Voorbeeld: [https://onlywei.github.io/explain-git-with-d3/](https://onlywei.gith
 @fa[linkedin] <https://www.linkedin.com/in/bertvanvreckem/>
 
 @fa[envelope] [bert.vanvreckem@hogent.be](mailto:bert.vanvreckem@hogent.be)
+
+Feedback op deze workshop is welkom!
