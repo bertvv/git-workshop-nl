@@ -328,6 +328,10 @@ Maak op Github een nieuwe repository aan (bv. `my_project`)
 
 +++
 
+![Nieuw project aanmaken voor een team](assets/new-repo.png)
+
++++
+
 ## Lokale kopie maken
 
 1. Klik groene knop "Clone or download", kopieer url
@@ -382,14 +386,10 @@ $ git push
 
 * Eén persoon doet:
     * Aanmaken nieuwe repository
-    * Optie voor creëeren README + `.gitignore` aanvinken
+    * Optie voor creëren README + `.gitignore` aanvinken
     * Teamleden toevoegen
 * Iedereen doet
     * `git clone https://github.com/USER/PROJECT.git`
-
-+++
-
-![Nieuw project aanmaken voor een team](assets/new-repo.png)
 
 +++
 
@@ -433,8 +433,12 @@ Jaarwerk Fien Keersse (14j):
 
 - Context: Presentatie basiscommando's Linux
 - Presentatie in Markdown
+    - Met [pandoc](https://pandoc.org/) omgezet naar [Reveal.js](https://revealjs.com/#/)
     - Gepubliceerd met Github Pages
 - Demo-omgeving: virtuele machine
+    - [Vagrant](https://www.vagrantup.com/) + installatiescript
+
++++
 
 ## Voorbeeld: workshop
 
@@ -663,7 +667,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKGL1YqIK/67bYib2FaVnRVnlTVJHxUq+DtF3e1aDC
 
 ## Lokale Git repository naar Github kopiëren
 
-1. Maak eerst nieuwe repository aan
+1. Maak eerst nieuwe repository aan in Github
 2. Kopieer de URL (clone or download)
 
 ```
